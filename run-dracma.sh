@@ -67,8 +67,12 @@ fi
 
 for project in $projects; do
   currProjectPath=$pathDracma\\$project\\$project
+  if [ "Financial.GUI" == $project ]; then
+    currProjectPath=$pathDracma\\$project
+  fi
   cd $currProjectPath;
   if [ "" != "$branch" ]; then
+    git fetch;
     git checkout $branch;
     git pull origin $branch;
   fi
@@ -77,10 +81,10 @@ for project in $projects; do
     ext=".fsproj"
   fi
   if [ "Financial.GUI" == $project ]; then
-    wt -w 0 nt PowerShell npm start --prefix $pathDracma\\$project
+    wt -w 0 nt --title ${project#"Financial."} PowerShell npm start --prefix $currProjectPath
   else
     dotnet build;
-    wt -w 0 nt --title ${project#"Financial."} dotnet  run --project $currProjectPath\\$project$ext;
+    wt -w 0 nt --title ${project#"Financial."} PowerShell dotnet  run --project $currProjectPath\\$project$ext;
   fi
 done
 

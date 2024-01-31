@@ -7,6 +7,7 @@ Essse projeto em ShellScript tem como objetivo facilitar a execução dos micros
 - Qualquer terminal com bash (Eu uso o git bash)
 - Ter todos os projetos do dracma em um mesmo diretório (O meu ta no Repos padrão do VS)
 - Como o script cria e demanda alguns arquivos (path.config, all.config, default.config) recomendo que coloque ele em uma pasta sozinho com os arquivos.
+- Ter o PowerShell instalado (Abro abas no PowerShell, depois vou ver se consigo abrir no terminal do git)
 
 #### Uso
 
